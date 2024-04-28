@@ -1,23 +1,27 @@
-import logo from './logo.svg';
+import { Button, Container, Row, Col } from "react-bootstrap";
 import './App.css';
+import { persons } from "./data_db";
+import DatesCount from "./components/dates_count";
+import DatesList from "./components/dates_list";
+
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="font color-body">
+      <Container className="py-5">
+        <DatesCount persons={persons} />
+        <DatesList persons={persons}/>
+        
+        <Row className="justify-content-center my-2">
+          <Col sm="8" className="d-flex justify-content-between">
+            <Button className="btn-style">مسح الكل</Button>
+            <Button className="btn-style">عرض البيانات</Button>
+          </Col>
+
+        </Row>
+
+      </Container>
     </div>
   );
 }
