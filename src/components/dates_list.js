@@ -6,9 +6,9 @@ const DatesList = ({persons})=>{
         <Row className="justify-content-center my-2 my-2">
           <Col sm="8" className="">
             <div className="rectangle p-2">
-              {
+              { persons.length ? 
                 persons.map((person) => {
-                  return (<div className="d-flex border-bottom mx-3">
+                  return (<div key={person.id} className="d-flex border-bottom mx-3">
                     <img src={person.img} className="img-avatar" alt="userphoto" />
                     <div className="px-3">
                       <p className="d-inline fs-5">{person.name1}</p>
@@ -16,7 +16,7 @@ const DatesList = ({persons})=>{
                     </div>
                   </div>)
 
-                })
+                }): <h2 className="text-center my-2">لا يوجد مواعيد اليوم</h2>
               }
             </div>
           </Col>
